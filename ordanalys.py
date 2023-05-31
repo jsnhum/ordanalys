@@ -106,7 +106,7 @@ def sentenceExtract(text,wordlist=None, unika=False):
         return(set(meningslista))
 
 def wordCloud(text):
-    wordcloud = WordCloud(regexp=r"\w[\w´-]+",max_font_size=100, max_words=100, background_color="black", collocations=False, stoppwords=None).generate(text)
+    wordcloud = WordCloud(regexp=r"\w[\w´-]+",max_font_size=100, max_words=100, background_color="black", collocations=False, stopwords=None).generate(text)
     plt.figure(figsize=(20, 25))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
