@@ -16,11 +16,11 @@ def frekvensGenerator(text, stoppord=False, wordcloud=False, vanligaste=False, l
     else:
         ordlista=tokeniserareSvenska(text).split()
     if stoppord=="sv":
-    	with open("/Users/jsnhum/Library/CloudStorage/Box-Box/Kodsamling/stoppord.txt") as s:
+    	with open("stoppord.txt") as s:
     		stoppord=s.read().split()
     	ordlista=[word.lower() for word in ordlista if word.lower() not in stoppord]     
     if stoppord=="en":
-    	with open("/Users/jsnhum/Library/CloudStorage/Box-Box/Kodsamling/stopwords.txt") as s:
+    	with open("stopwords.txt") as s:
     		stoppord=s.read().split()
     	ordlista=[word.lower() for word in ordlista if word.lower() not in stoppord]
     if lemmatisera=="en":
@@ -38,11 +38,11 @@ def frekvensGenerator(text, stoppord=False, wordcloud=False, vanligaste=False, l
     
 def stoppBort (ordlista,lang):
 	 if lang=="sv":
-	 	with open("/Users/jsnhum/Library/CloudStorage/Box-Box/Kodsamling/stoppord.txt") as s:
+	 	with open("stoppord.txt") as s:
 	 		stoppord=s.read().split()
 	 	ordlista=[word.lower() for word in ordlista if word.lower() not in stoppord]
 	 if lang=="en":
-	 	with open("/Users/jsnhum/Library/CloudStorage/Box-Box/Kodsamling/stopwords.txt") as s:
+	 	with open("stopwords.txt") as s:
 	 		stoppord=s.read().split()
 	 	ordlista=[word.lower() for word in ordlista if word.lower() not in stoppord]
 	 return(ordlista)
